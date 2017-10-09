@@ -1,0 +1,4 @@
+[31-Oct-2016 16:01:25 America/Denver] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/zamorano/public_html/entomologybd/admin_user/db/database_utilities.php on line 3
+[31-Oct-2016 16:01:29 America/Denver] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/zamorano/public_html/entomologybd/admin_user/db/database_utilities.php on line 3
+[31-Oct-2016 16:02:08 America/Denver] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/zamorano/public_html/entomologybd/admin_user/db/database_utilities.php on line 3
+[31-Oct-2016 16:02:12 America/Denver] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/zamorano/public_html/entomologybd/admin_user/db/database_utilities.php on line 3
