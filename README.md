@@ -6,8 +6,8 @@ Find-edit-delete-php
 Base de datos
 --------------------
 entomologia
-Usuario: root
-Pass: Ninguna
+* Usuario: root
+* Pass: Ninguna
 
 Se pueden crear ficheros .md para:
 
