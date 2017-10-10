@@ -1,10 +1,13 @@
-#EJEMPLO DE README.md
+Find-edit-delete-php
+==========
 
+###Proyecto realizado con PHP y MySQL
 
-
-###Esto es un ejemplo de README.md
-
-
+Base de datos
+--------------------
+entomologia
+Usuario: root
+Pass: Ninguna
 
 Se pueden crear ficheros .md para:
 
