@@ -14,16 +14,16 @@ if(isset( $_SESSION['uid'] ) )
 <head>
 <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Entomology | Zamorano University</title>
+    <title>Find Edit Delete</title>
     <link rel="icon" href="./img/favicon.png" type="image/x-icon" />
 
 
   <link rel="stylesheet" href="css/style.css">
-  
+
   <!--[if !IE]><!-->
   <style>
 
-  /* 
+  /*
   Max width before this PARTICULAR table gets nasty
   This query will take effect for any screen smaller than 760px
   and also iPads specifically.
@@ -32,40 +32,40 @@ if(isset( $_SESSION['uid'] ) )
   (min-device-width: 768px) and (max-device-width: 1024px)  {
     .title {display: none;}
     /* Force table to not be like tables anymore */
-    table, thead, tbody, th, td, tr { 
-      display: block; 
+    table, thead, tbody, th, td, tr {
+      display: block;
       width: 370px
     }
-    
+
     /* Hide table headers (but not display: none;, for accessibility) */
-    thead tr { 
+    thead tr {
       position: absolute;
       top: -9999px;
       left: -9999px;
     }
-    
-    tr { 
+
+    tr {
       border: 1px solid #ccc; }
-    
-    td { 
+
+    td {
       /* Behave  like a "row" */
       border: none;
-      border-bottom: 1px solid #eee; 
+      border-bottom: 1px solid #eee;
       position: relative;
-      padding-left: 45%; 
+      padding-left: 45%;
     }
-    
-    td:before { 
+
+    td:before {
       /* Now like a table header */
       position: absolute;
       /* Top/left values mimic padding */
       top: 6px;
       left: 6px;
-      width: 60%; 
-      padding-right: 10px; 
+      width: 60%;
+      padding-right: 10px;
       white-space: nowrap;
     }
-    
+
     /*
     Label the data
     */
@@ -77,24 +77,24 @@ if(isset( $_SESSION['uid'] ) )
     td:nth-of-type(6):before { content: "Locality Data"; }
     td:nth-of-type(7):before { content: "Determination Label"; }
   }
-  
+
   /* Smartphones (portrait and landscape) ----------- */
   @media only screen
   and (min-device-width : 320px)
   and (max-device-width : 480px) {
-    body { 
-      padding: 0; 
-      margin: 0; 
+    body {
+      padding: 0;
+      margin: 0;
       width: 500px; }
     }
-  
+
   /* iPads (portrait and landscape) ----------- */
   @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    body { 
-      width: 495px; 
+    body {
+      width: 495px;
     }
   }
-  
+
   </style>
   <!--<![endif]-->
 </head>
@@ -104,8 +104,8 @@ if(isset( $_SESSION['uid'] ) )
 <div align="center">
 
 <form name="form1" method="post" action="index.php" id="cdr" aling="center" >
-  
-  <h1 align="center">ENTOMOLOGY <br>EAPZ DATABASE</h1> 
+
+  <h1 align="center">ENTOMOLOGY <br>EAPZ DATABASE</h1>
   <p>Search by </br>Family (e.g. Cerambycidae) or genus (e.g. Arhopalus).</p>
       <p>
        <input pattern="[A-Za-z]+" class="buscar" id="busca" name="busca" type="search" placeholder="Search" autofocus>
@@ -133,7 +133,7 @@ body{
     }
 </style>
 </div>
-  <?php  
+  <?php
 //*
 
 
@@ -142,7 +142,7 @@ body{
 if(empty($_POST["busca"]))
 {
       ?>
-      <div align="center"> 
+      <div align="center">
       <?php
   echo '<h3><p><strong>ENTER TO SEARCH</strong></p></h3>';;
   ///////// si es una Busqueda entrara en este siguente IF lo cual iniciara el proceso
@@ -171,10 +171,10 @@ function desconectar(){
 }
 $busqueda="SELECT * FROM entomologia3 WHERE family LIKE '%".$busca."%'  OR genus LIKE '%".$busca."%'";
 //cambiar nombre de la tabla de busqueda
- $resultado = mysql_query($busqueda); 
+ $resultado = mysql_query($busqueda);
  //Ejecución de la consulta
       //Si hay resultados...
-    if (mysql_num_rows($resultado) > 0){ 
+    if (mysql_num_rows($resultado) > 0){
       $registros = '<h3><p><strong>HEMOS ENCONTRADO ' . mysql_num_rows($resultado) . ' REGISTROS </strong></p></h3>';
 
       ?>
@@ -217,7 +217,7 @@ echo '</tr>';
     }else{
       $registros = '<h3><p><strong>HEMOS ENCONTRADO ' . mysql_num_rows($resultado) . ' REGISTROS </strong></p></h3>';
       ?>
-      <div align="center"> 
+      <div align="center">
       <?php
       echo $registros;
     }
