@@ -157,7 +157,7 @@ if(empty($_POST["busca"]))
 
 
 mysql_connect("localhost","root","");// si haces conexion desde internnet usa 3 parametros si es a nivel local solo 2
-mysql_select_db("entomologia");//nombre de la base de datos
+mysql_select_db("3ntomologia");//nombre de la base de datos
 function conectar(){
   global $conexion;  //Definición global para poder utilizar en todo el contexto
   $conexion = mysql_connect(HOST_DB, USER_DB, PASS_DB)

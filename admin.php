@@ -1,4 +1,4 @@
-<?php 
+<?php
 include_once('utilities.php');
 include_once('db/database_utilities.php');
 if( !isset( $_SESSION['uid'] ) )
@@ -15,7 +15,7 @@ $user_data = get_user_data_by_id( $_SESSION['uid'] );
 
 <style>
   /*Estilo de la tabla responsive*/
-  /* 
+  /*
   Max width before this PARTICULAR table gets nasty
   This query will take effect for any screen smaller than 760px
   and also iPads specifically.
@@ -24,41 +24,41 @@ $user_data = get_user_data_by_id( $_SESSION['uid'] );
   (min-device-width: 768px) and (max-device-width: 1024px)  {
     .title {display: none;}
     /* Force table to not be like tables anymore */
-    table, thead, tbody, th, td, tr { 
-      display: block; 
+    table, thead, tbody, th, td, tr {
+      display: block;
       width: 370px
     }
-    
+
     /* Hide table headers (but not display: none;, for accessibility) */
-    thead tr { 
+    thead tr {
       position: absolute;
       top: -9999px;
       left: -9999px;
     }
-    
-    tr { 
+
+    tr {
       border: 1px solid #ccc; }
-    
-    td { 
+
+    td {
       /* Behave  like a "row" */
       border: none;
-      border-bottom: 1px solid #eee; 
+      border-bottom: 1px solid #eee;
       position: relative;
       padding-left: 50%;
-      height: auto; 
+      height: auto;
     }
-    
-    td:before { 
+
+    td:before {
       /* Now like a table header */
       position: absolute;
       /* Top/left values mimic padding */
       top: 6px;
       left: 6px;
-      width: 60%; 
-      padding-right: 10px; 
+      width: 60%;
+      padding-right: 10px;
       white-space: nowrap;
     }
-    
+
     /*
     Label the data
     */
@@ -70,24 +70,24 @@ $user_data = get_user_data_by_id( $_SESSION['uid'] );
     td:nth-of-type(6):before { content: "Locality Data"; }
     td:nth-of-type(7):before { content: "Determination Label"; }
   }
-  
+
   /* Smartphones (portrait and landscape) ----------- */
   @media only screen
   and (min-device-width : 320px)
   and (max-device-width : 480px) {
-    body { 
-      padding: 0; 
-      margin: 0; 
+    body {
+      padding: 0;
+      margin: 0;
       width: 500px; }
     }
-  
+
   /* iPads (portrait and landscape) ----------- */
   @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    body { 
-      width: 495px; 
+    body {
+      width: 495px;
     }
   }
-  
+
   </style>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -104,7 +104,7 @@ $user_data = get_user_data_by_id( $_SESSION['uid'] );
 
     <?php require_once('header_admin.php'); ?>
     <div class="row">
- 
+
       <div class="large-9 columns">
         <div class="section-container tabs" data-section>
           <section class="section">
@@ -118,18 +118,18 @@ $user_data = get_user_data_by_id( $_SESSION['uid'] );
                         </div>
                       </div>
 
-                  
+
               </div>
             </div>
           </section>
         </div>
       </div>
-     
+
 
 <div align="center">
 
 <form name="form1" method="post" action="admin.php" id="cdr" aling="center" >
-  
+
   <h3 align="center">BÚSQUEDA EL REGISTRO</h3>
   <p>Ingresar un ID (e.g. 20.237EAPZ) para modificar o eliminar.</p>
       <p>
@@ -149,14 +149,14 @@ input{outline:none;border:0px;}
 </style>
 </div>
 
-    
 
-    
+
+
 <?php
 if(empty($_POST["busca"]))
 {
       ?>
-      <div align="center"> 
+      <div align="center">
       <?php
   echo '<h3><p><strong>ENTER TO SEARCH</strong></p></h3>';;
   ///////// si es una Busqueda entrara en este siguente IF lo cual iniciara el proceso
@@ -168,10 +168,10 @@ if(empty($_POST["busca"]))
     echo "Debes escribir letras de la A - Z";
   }else {
     # code...
-  
+
 
 mysql_connect("localhost","root","");// si haces conexion desde internnet usa 3 parametros si es a nivel local solo 2
-mysql_select_db("entomologia");//nombre de la base de datos
+mysql_select_db("3ntomologia");//nombre de la base de datos
 function conectar(){
   global $conexion;  //Definición global para poder utilizar en todo el contexto
   $conexion = mysql_connect(HOST_DB, USER_DB, PASS_DB)
@@ -186,10 +186,10 @@ function desconectar(){
 $busqueda="SELECT * FROM entomologia3 WHERE id LIKE '%".$busca."%'";
 
 //cambiar nombre de la tabla de busqueda
- $resultado = mysql_query($busqueda); 
+ $resultado = mysql_query($busqueda);
  //Ejecución de la consulta
       //Si hay resultados...
-    if (mysql_num_rows($resultado) > 0){ 
+    if (mysql_num_rows($resultado) > 0){
       $registros = '<h3><p><strong>HEMOS ENCONTRADO ' . mysql_num_rows($resultado) . ' REGISTROS </strong></p></h3>';
 
       ?>
@@ -209,7 +209,7 @@ echo $registros;
      <td width="80"><strong>Species</strong></td>
      <td width="200"><strong>Locality data</strong></td>
      <td width="200"><strong>Determination label</strong></td>
-     <td width="120"><strong>UPDATE</strong>                          
+     <td width="120"><strong>UPDATE</strong>
    </tr>
  </div>
 <?php
@@ -229,15 +229,15 @@ echo '<td align="center" width="200">'.htmlspecialchars($f['deremination_label']
 echo '<td align="center" width="300" hidden>'.htmlspecialchars($f['idz']).'</td>';
 
                           while($user = $result->fetch_assoc())
-                          
+
 ?>
-                            <td align="center" width="120">                            
+                            <td align="center" width="120">
                             <span onclick="trasformEditable(this)" class="button tiny">Editar</span>
                             <a href="./delete.php?idz=<?php echo $f['idz']; ?>" class="button tiny alert">Delete</a>
-                             
+
                                 </td>
                           </tr>
-                          <?php 
+                          <?php
 
 
 echo '</tr>';
@@ -248,12 +248,12 @@ echo '</tr>';
     }else{
       $registros = '<h3><p><strong>HEMOS ENCONTRADO ' . mysql_num_rows($resultado) . ' REGISTROS </strong></p></h3>';
       ?>
-      <div align="center"> 
+      <div align="center">
       <?php
       echo $registros;
 
 
-  
+
     }
 }
 }
