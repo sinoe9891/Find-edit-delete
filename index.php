@@ -105,7 +105,7 @@ if(isset( $_SESSION['uid'] ) )
 
 <form name="form1" method="post" action="index.php" id="cdr" aling="center" >
 
-  <h1 align="center">ENTOMOLOGY <br>EAPZ DATABASE</h1>
+  <h1 align="center">Find, Edit and Delete</h1>
   <p>Search by </br>Family (e.g. Cerambycidae) or genus (e.g. Arhopalus).</p>
       <p>
        <input pattern="[A-Za-z]+" class="buscar" id="busca" name="busca" type="search" placeholder="Search" autofocus>
