@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Entomology | Zamorano University</title>
+    <title>Administrador | Find, Edit and Delete</title>
     <link rel="icon" href="./img/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="./css/foundation.css" />
     <script src="./js/vendor/modernizr.js"></script>
@@ -32,10 +32,10 @@
       <div class="large-3 columns">
         <p><h1><img href="https://www.zamorano.edu/entomology" src="./img/logo.png" /></h1></p>
       </div>
-      <div align="right"> 
+      <div align="right">
       <div class="large-9 columns">
               <div class="right button-group">
-                
+
                 <a href="./admin_user" class="button">Administrador de Usuarios</a>
                 <a href="./new_data.php" class="button">Nuevo Registro</a>
                 <?php if( !isset($_SESSION['uid']) ){ ?>
@@ -48,11 +48,11 @@
                 <a href="./logout.php" class="button">Logout</a>
           <?php } ?>
               </div>
-              </div>         
+              </div>
         </div>
       </div>
-      
-        </div>       
+
+        </div>
         </div>
       </div>
     </div>
