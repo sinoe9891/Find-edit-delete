@@ -13,12 +13,12 @@ $user_id = $_SESSION['uid'];
 $user_data = get_user_data_by_id( $user_id );
 
 if( $_POST )
-{ 
+{
   $passwordA = htmlspecialchars($_POST['passwordAct']);
   $passwordN = htmlspecialchars($_POST['passwordNew']);
   $passwordNR = htmlspecialchars($_POST['passwordNewRep']);
   $error_encontrado='';
-  
+
   if (validar_clave($passwordA, $error_encontrado) && validar_clave($passwordNR, $error_encontrado) && validar_clave($passwordNR, $error_encontrado)) {
     if ($passwordN==$passwordNR) {
       update_user_address($user_id, $passwordN);
@@ -33,10 +33,10 @@ if( $_POST )
     }
 
   }
-        
-        
 
-      
+
+
+
 
 
 ?>
@@ -45,18 +45,18 @@ if( $_POST )
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Perfil | Zamorano University</title>
+    <title>Perfil | Find, Edit and Delete</title>
     <link rel="icon" href="./img/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="./css/style.css" />
     <script src="./js/vendor/modernizr.js"></script>
   </head>
   <body>
-    
+
     <?php require_once('header_profile.php'); ?>
 
-     
+
     <div class="row">
- 
+
       <div class="large-9 columns">
         <h2>Tu Perfil</h2>
         <div class="section-container tabs" data-section>
@@ -88,7 +88,7 @@ if( $_POST )
                     </div>
                     <div class="row">
                       <div class="large-6 columns">
-                        
+
                           <h2>Cambiar Contraseña</h2>
                         <label>La contraseña debe contener al menos una mayuscula, una minuscula, un valor numerico y estar comprendida entre 8 y 16 caracteres</label>
 
@@ -97,11 +97,11 @@ if( $_POST )
                         <input pattern="[a-zA-Z0-9]+" minlength="8" maxlength="16"  type="password" name="passwordAct" />
                         </label>
 
-                        <label>Nueva Contraseña 
+                        <label>Nueva Contraseña
                         <input  pattern="[a-zA-Z0-9]+" minlength="8" maxlength="16" type="password" name="passwordNew" />
                         </label>
 
-                        <label>Confirmar Nueva Contraseña 
+                        <label>Confirmar Nueva Contraseña
                         <input  pattern="[a-zA-Z0-9]+" minlength="8" maxlength="16" type="password" name="passwordNewRep" />
                         </label>
 
@@ -118,7 +118,7 @@ if( $_POST )
           </section>
         </div>
       </div>
-    
+
 
     <?php require_once('footer.php');
 
