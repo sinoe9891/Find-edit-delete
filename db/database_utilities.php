@@ -104,7 +104,7 @@ function validar_clave($clave,&$error_clave){
    }
    $error_clave = "";
    return true;
-} 
+}
 
 
 ?>
